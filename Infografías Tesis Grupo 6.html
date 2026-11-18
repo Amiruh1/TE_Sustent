@@ -1,0 +1,494 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Infografías Tesis Grupo 6</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: guía de estudio en una columna; barra de secciones fija arriba; bloques: cómo sustentar, guion, infografías, banco de preguntas y glosario. */
+:root{
+  --bg:#FFFFFF; --fg:#13212B; --muted:#56656F; --line:#DCE5E8; --panel:#F1F6F7;
+  --primary:#0E5E6F; --primary-soft:#DDEEF1; --on-primary:#FFFFFF;
+  --accent:#C2410C; --accent-soft:#FDE8DE; --ok:#1F7A45; --ok-soft:#DFF3E6;
+  --display:"Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  --body:"Source Serif 4", "Times New Roman", Georgia, serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1518; --fg:#E7EEF0; --muted:#93A4AB; --line:#22333A; --panel:#15222A;
+  --primary:#4FB7C9; --primary-soft:#173840; --on-primary:#0D1518;
+  --accent:#FF8A5B; --accent-soft:#3A2218; --ok:#6CCB93; --ok-soft:#173326; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0D1518; --fg:#E7EEF0; --muted:#93A4AB; --line:#22333A; --panel:#15222A;
+  --primary:#4FB7C9; --primary-soft:#173840; --on-primary:#0D1518;
+  --accent:#FF8A5B; --accent-soft:#3A2218; --ok:#6CCB93; --ok-soft:#173326; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+
+/* Cabecera */
+.hero{max-width:1000px;margin:0 auto;padding-block:40px 24px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
+.hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;max-width:26ch}
+.hero .who{color:var(--muted);font-size:16px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.stat{background:var(--panel);border-radius:10px;padding:8px 14px;font-family:var(--display);font-weight:700;font-size:14px}
+.stat b{color:var(--primary);font-size:18px;margin-right:4px;font-variant-numeric:tabular-nums}
+
+/* Navegación */
+.nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));margin-bottom:32px}
+.nav-in{max-width:1000px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.nav a{flex:none;font-family:var(--display);font-weight:700;font-size:14.5px;text-decoration:none;color:var(--fg);border-radius:999px;padding:6px 14px;background:var(--panel)}
+.nav a:hover,.nav a:focus-visible{background:var(--primary);color:var(--on-primary);outline:none}
+
+/* Secciones */
+.sec{display:flex;flex-direction:column;gap:20px;scroll-margin-top:72px}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.sec-head .k{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.sec-head h2{font-size:clamp(24px,3.2vw,32px);font-weight:800}
+.sec-head p{color:var(--muted);max-width:68ch}
+.sub{font-family:var(--display);font-weight:800;font-size:20px;margin-top:8px}
+
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:860px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--panel);border-radius:14px;padding:16px 18px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.box h3{font-size:18px;font-weight:700}
+.lbl{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--primary)}
+.small{font-size:15px;color:var(--muted)}
+.big{font-family:var(--display);font-weight:800;font-size:38px;line-height:1;color:var(--primary);font-variant-numeric:tabular-nums}
+.solid{background:var(--primary);color:var(--on-primary)}
+.solid .lbl,.solid .small{color:var(--on-primary);opacity:.85}
+.note{border-left:0;background:var(--accent-soft);border-radius:12px;padding:12px 16px;font-size:16px}
+.note b{font-family:var(--display)}
+.mono{font-family:var(--mono);font-size:.86em}
+
+/* Ruta de sustentación */
+.route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:r}
+@media (max-width:860px){.route{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.route{grid-template-columns:1fr}}
+.route .box{position:relative}
+.route .step-n{font-family:var(--display);font-weight:800;font-size:13px;color:var(--on-primary);background:var(--primary);border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center}
+
+/* Barra de tiempo */
+.timebar{display:flex;width:100%;border-radius:10px;overflow:hidden;height:46px}
+.timebar span{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--on-primary);white-space:nowrap;overflow:hidden;padding:0 4px}
+.timebar span:nth-child(odd){background:var(--primary)}
+.timebar span:nth-child(even){background:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14.5px;color:var(--muted)}
+.legend b{color:var(--fg);font-family:var(--display)}
+
+/* Do / Don't */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:620px){.dd{grid-template-columns:1fr}}
+.dd ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px}
+.do{background:var(--ok-soft)}
+.dont{background:var(--accent-soft)}
+.do .lbl{color:var(--ok)} .dont .lbl{color:var(--accent)}
+
+/* Fórmula de respuesta */
+.formula{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.formula .f{background:var(--primary-soft);border-radius:10px;padding:10px 14px;font-family:var(--display);font-weight:700;font-size:15px;flex:1 1 160px;min-width:0}
+.formula .f small{display:block;font-family:var(--body);font-weight:400;font-size:14.5px;color:var(--muted)}
+.formula .plus{font-family:var(--display);font-weight:800;color:var(--primary)}
+
+/* Desplegables */
+details{background:var(--panel);border-radius:12px;padding:0 18px}
+summary{cursor:pointer;list-style:none;padding:14px 0;display:flex;gap:12px;align-items:baseline;font-family:var(--display);font-weight:700;font-size:16.5px}
+summary::-webkit-details-marker{display:none}
+summary .mk{flex:none;width:22px;height:22px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;transform:translateY(3px)}
+details[open] summary .mk{background:var(--accent)}
+summary:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:6px}
+.ans{padding:0 0 16px 34px;display:flex;flex-direction:column;gap:10px;font-size:16.5px}
+.list{display:flex;flex-direction:column;gap:8px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-left:auto;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.tag{background:var(--primary-soft);color:var(--primary);border-radius:999px;padding:2px 9px;font-weight:700}
+summary .qtext{flex:1 1 auto;min-width:0}
+@media (max-width:620px){summary{flex-wrap:wrap}.meta{margin-left:34px}}
+.idea{font-family:var(--display);font-weight:600;color:var(--primary)}
+
+/* Infografías */
+.map{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch}
+.arrow{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:28px;color:var(--primary)}
+@media (max-width:700px){.map{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:28px}}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--display);font-weight:700;font-size:13px;border:2px solid currentColor;border-radius:999px;padding:1px 10px}
+.funnel{display:flex;flex-direction:column;align-items:center;gap:6px}
+.lvl{display:grid;grid-template-columns:160px minmax(0,1fr) auto;gap:14px;align-items:center;border-radius:12px;padding:12px 16px;background:var(--panel);width:100%}
+.lvl:nth-child(2){width:93%}.lvl:nth-child(3){width:86%}.lvl:nth-child(4){width:79%;background:var(--primary);color:var(--on-primary)}
+.lvl b{font-family:var(--display)}
+.lvl .v{font-family:var(--display);font-weight:800;font-size:24px;color:var(--primary);white-space:nowrap;font-variant-numeric:tabular-nums}
+.lvl:nth-child(4) .v{color:var(--on-primary)}
+@media (max-width:700px){.lvl,.lvl:nth-child(n){width:100%;grid-template-columns:1fr;gap:4px}}
+.chain{display:grid;grid-template-columns:70px repeat(5,minmax(0,1fr));gap:8px}
+.chain-h{display:grid;grid-template-columns:70px repeat(5,minmax(0,1fr));gap:8px;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chain .t{display:flex;align-items:center;justify-content:center;background:var(--primary);color:var(--on-primary);border-radius:10px;font-family:var(--display);font-weight:800;font-size:18px}
+.chain .c{background:var(--panel);border-radius:10px;padding:10px 12px;font-size:14.5px;min-width:0}
+.chain .c i{display:block;font-style:normal;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+@media (max-width:860px){.chain-h{display:none}.chain{grid-template-columns:1fr 1fr}.chain .t{grid-column:1/-1;padding:6px}}
+@media (max-width:480px){.chain{grid-template-columns:1fr}}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.node{flex:1 1 150px;background:var(--panel);border-radius:12px;padding:14px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.node .n{font-family:var(--display);font-weight:800;font-size:17px}
+.link{display:flex;align-items:center;font-family:var(--display);font-weight:800;font-size:22px;color:var(--primary)}
+@media (max-width:700px){.link{width:100%;justify-content:center;transform:rotate(90deg);height:22px}}
+.design{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}
+.stp{flex:1 1 130px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:15px}
+.disc{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:28px;border:3px solid var(--primary);color:var(--primary)}
+.disc.f{background:var(--primary);color:var(--on-primary)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-family:var(--display);font-weight:700;white-space:nowrap}
+.tree{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.tree{grid-template-columns:1fr}}
+.branch{border:2px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.branch b{font-family:var(--display);font-size:19px}
+.q{background:var(--panel);border-radius:8px;padding:8px 12px;font-size:14.5px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.yes,.no{border-radius:8px;padding:8px 10px;font-size:14px}
+.yes{background:var(--primary-soft)} .no{background:var(--accent-soft)}
+.yes i,.no i{display:block;font-style:normal;font-family:var(--display);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+
+/* Banco de preguntas */
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filter{font-family:var(--display);font-weight:700;font-size:14px;border:2px solid var(--line);background:var(--bg);color:var(--fg);border-radius:999px;padding:5px 12px;cursor:pointer}
+.filter[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.filter:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{font-family:var(--display);font-weight:700;font-size:14px;border:2px solid var(--fg);background:transparent;color:var(--fg);border-radius:999px;padding:5px 14px;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.progress{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pbar{flex:1 1 220px;height:10px;border-radius:999px;background:var(--panel);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--ok);width:0%;transition:width .3s}
+.ptext{font-family:var(--display);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.mastered{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:14.5px;cursor:pointer;color:var(--ok)}
+.mastered input{width:18px;height:18px;accent-color:var(--ok)}
+details.done summary .qtext{color:var(--muted)}
+details.done summary .mk{background:var(--ok)}
+.foot{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+</style>
+
+<header class="hero">
+  <span class="eyebrow">Guía de estudio · Tesis I · UPN</span>
+  <h1>Cómo sustentar la app Android para la gestión de inventarios de La tienda del chino</h1>
+  <p class="who">Rafael Gutierrez Yupanqui y Amir Haram Urbano Hinostroza · Asesora: Dra. Mara Sandra Rivera Galindo</p>
+  <div class="stats">
+    <span class="stat"><b>17</b>diapositivas</span>
+    <span class="stat"><b id="minTotal">12</b>min de guion</span>
+    <span class="stat"><b id="qTotal">0</b>preguntas para practicar</span>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Secciones">
+  <div class="nav-in">
+    <a href="#sustentar">Cómo sustentar</a><a href="#guion">Guion</a><a href="#mapa">Infografías</a><a href="#preguntas">Preguntas</a><a href="#glosario">Glosario</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- CÓMO SUSTENTAR -->
+<section class="sec" id="sustentar">
+  <div class="sec-head"><span class="k">Parte 1</span><h2>Cómo sustentar</h2>
+    <p>La sustentación tiene que mostrar una sola idea: el registro manual genera tres problemas medibles, y la aplicación se evaluará midiendo esos mismos tres indicadores antes y después de implementarla.</p></div>
+
+  <h3 class="sub">La ruta en cuatro movimientos</h3>
+  <div class="route">
+    <div class="box"><span class="step-n">1</span><h3>Problema</h3><p class="small">Del mundo al minimarket, en 2 minutos. Termina en los tres síntomas: tiempo, exactitud y agotados.</p></div>
+    <div class="box"><span class="step-n">2</span><h3>Propuesta</h3><p class="small">Pregunta, objetivos, justificación y viabilidad. Repite que cada indicador responde a un síntoma.</p></div>
+    <div class="box"><span class="step-n">3</span><h3>Respaldo</h3><p class="small">Antecedentes, teoría y operacionalización: por qué se mide así y quién ya lo hizo.</p></div>
+    <div class="box"><span class="step-n">4</span><h3>Prueba</h3><p class="small">Hipótesis, diseño O1 – X – O2 y muestra. Menciona la limitación antes de que te la pregunten.</p></div>
+  </div>
+
+  <h3 class="sub">Reparto del tiempo (≈ 12 min)</h3>
+  <div class="timebar" id="timebar" role="img" aria-label="Distribución del tiempo por bloque"></div>
+  <div class="legend" id="legend"></div>
+
+  <h3 class="sub">Cómo dividirse entre los dos</h3>
+  <div class="grid g2">
+    <div class="box"><span class="lbl">Expositor 1 · diapositivas 1–9</span><h3>Problema, objetivos, justificación y antecedentes</h3><p class="small">Cierra con: «Ahora mi compañero explicará cómo vamos a medirlo».</p></div>
+    <div class="box"><span class="lbl">Expositor 2 · diapositivas 10–17</span><h3>Marco teórico, variables, hipótesis y metodología</h3><p class="small">Abre retomando el problema en una frase antes de entrar a la arquitectura.</p></div>
+  </div>
+
+  <h3 class="sub">Fórmula para responder cualquier pregunta</h3>
+  <div class="formula">
+    <div class="f">1. Confirma<small>«Entiendo, la pregunta es sobre…»</small></div><span class="plus">+</span>
+    <div class="f">2. Responde corto<small>La idea central en una frase.</small></div><span class="plus">+</span>
+    <div class="f">3. Respalda<small>Un dato, una fórmula o un autor de la tesis.</small></div><span class="plus">+</span>
+    <div class="f">4. Cierra<small>Qué significa para tu estudio.</small></div>
+  </div>
+
+  <div class="dd">
+    <div class="box do"><span class="lbl">Sí</span><ul>
+      <li>Usar las siglas solo después de decirlas completas una vez.</li>
+      <li>Señalar en la diapositiva la parte de la que hablas (por ejemplo, O1 en el esquema).</li>
+      <li>Decir «es un valor estimado que confirmaremos en el pretest» cuando corresponda.</li>
+      <li>Reconocer la limitación del diseño y explicar cómo se mitiga.</li>
+      <li>Si no sabes algo: «No lo contemplamos en esta etapa; lo evaluaremos en Tesis II».</li>
+    </ul></div>
+    <div class="box dont"><span class="lbl">No</span><ul>
+      <li>Leer las diapositivas palabra por palabra.</li>
+      <li>Decir que la aplicación «demuestra causalidad»: el diseño muestra una mejora asociada.</li>
+      <li>Presentar los 2.5 min, 20 % y 8 % como datos medidos.</li>
+      <li>Inventar resultados: todavía no hay datos.</li>
+      <li>Confundir los indicadores de la VI (PFA, D, TRA) con los de la VD (TRM, ERS, SDA).</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- GUION -->
+<section class="sec" id="guion">
+  <div class="sec-head"><span class="k">Parte 2</span><h2>Guion por diapositiva</h2>
+    <p>Lee la idea clave e intenta decirla con tus palabras. Después abre el guion y compáralo.</p></div>
+  <div class="tools"><button class="btn" type="button" data-toggle="guionList" data-open="1">Abrir todo</button><button class="btn" type="button" data-toggle="guionList" data-open="0">Cerrar todo</button></div>
+  <div class="list" id="guionList"></div>
+</section>
+
+<!-- INFOGRAFÍAS -->
+<section class="sec" id="mapa">
+  <div class="sec-head"><span class="k">Parte 3</span><h2>Infografías</h2><p>Los esquemas que conviene tener en la cabeza durante la sustentación.</p></div>
+
+  <h3 class="sub">La tesis en una mirada</h3>
+  <div class="map">
+    <div class="box solid"><span class="lbl">Variable independiente (X)</span><h3>Aplicación Android con API REST, AWS Lambda y Amazon DynamoDB</h3><p class="small">Se verifica con la ISO/IEC 25010 después de implementarla.</p><div class="chips"><span class="chip">PFA %</span><span class="chip">D %</span><span class="chip">TRA ms</span></div></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="box"><span class="lbl">Variable dependiente (Y)</span><h3>Gestión de inventarios</h3><p class="small">Se mide en el pretest y en el postest.</p><div class="chips" style="color:var(--primary)"><span class="chip">TRM min</span><span class="chip">ERS %</span><span class="chip">SDA %</span></div></div>
+  </div>
+  <div class="grid g4">
+    <div class="box"><span class="lbl">Enfoque</span><h3>Cuantitativo</h3></div>
+    <div class="box"><span class="lbl">Tipo y nivel</span><h3>Aplicada · explicativo</h3></div>
+    <div class="box"><span class="lbl">Diseño</span><h3>Preexperimental O1 – X – O2</h3></div>
+    <div class="box"><span class="lbl">Alcance</span><h3>Longitudinal prospectivo</h3></div>
+  </div>
+
+  <h3 class="sub">Realidad problemática</h3>
+  <div class="funnel">
+    <div class="lvl"><b>Internacional</b><span>México: MIPYMES sin monitoreo (Galaviz et al., 2024). Indonesia, Ecuador y Colombia: registro manual con quiebres y stock desconocido.</span><span class="v">66.5 %</span></div>
+    <div class="lvl"><b>Perú</b><span>Empresas formales micro y pequeñas; 44.2 % en comercio (Agencia Andina, 2025).</span><span class="v">99.1 %</span></div>
+    <div class="lvl"><b>Lima Metropolitana</b><span>Empresas del país; 43.7 % en comercio (INEI, 2026).</span><span class="v">42.2 %</span></div>
+    <div class="lvl"><b>La tienda del chino</b><span>≈ 800 productos · 3–4 trabajadores · 300–500 clientes/día · Excel</span><span class="v">UV N.° 3</span></div>
+  </div>
+  <div class="grid g3">
+    <div class="box"><span class="lbl">Tiempo → TRM</span><span class="big">≈ 2.5 min</span><p class="small">por movimiento registrado</p></div>
+    <div class="box"><span class="lbl">Exactitud → ERS</span><span class="big">≈ 20 %</span><p class="small">de productos con stock distinto al físico</p></div>
+    <div class="box"><span class="lbl">Disponibilidad → SDA</span><span class="big">≈ 8 %</span><p class="small">de productos agotados cada día</p></div>
+  </div>
+  <p class="note"><b>Valores estimados:</b> se confirmarán en el pretest.</p>
+
+  <h3 class="sub">Matriz de consistencia por indicador</h3>
+  <div class="list">
+    <div class="chain-h"><span></span><span>Problema</span><span>Objetivo</span><span>Hipótesis</span><span>Instrumento</span><span>Prueba</span></div>
+    <div class="chain"><div class="t">TRM</div><div class="c"><i>PE1</i>¿Reduce el tiempo de registro?</div><div class="c"><i>OE1</i>Determinar si lo reduce</div><div class="c"><i>HE1</i>Lo reduce significativamente</div><div class="c"><i>Ficha 1</i>Hora de inicio y de fin</div><div class="c"><i>Prueba</i>t / Welch o U de Mann-Whitney</div></div>
+    <div class="chain"><div class="t">ERS</div><div class="c"><i>PE2</i>¿Incrementa la exactitud?</div><div class="c"><i>OE2</i>Determinar si la incrementa</div><div class="c"><i>HE2</i>La incrementa significativamente</div><div class="c"><i>Ficha 2</i>Registrado vs. físico (1/0)</div><div class="c"><i>Prueba</i>McNemar</div></div>
+    <div class="chain"><div class="t">SDA</div><div class="c"><i>PE3</i>¿Reduce el % de SKU-día agotados?</div><div class="c"><i>OE3</i>Determinar si lo reduce</div><div class="c"><i>HE3</i>Lo reduce significativamente</div><div class="c"><i>Ficha 3</i>SKU con stock cero por día</div><div class="c"><i>Prueba</i>t / Welch o U de Mann-Whitney</div></div>
+  </div>
+
+  <h3 class="sub">Arquitectura de la aplicación</h3>
+  <div class="flow">
+    <div class="node"><span class="n">App Android</span><span class="small">Kotlin · códigos de barras · caché local</span></div><div class="link" aria-hidden="true">→</div>
+    <div class="node"><span class="n">API REST</span><span class="small">Amazon API Gateway</span></div><div class="link" aria-hidden="true">→</div>
+    <div class="node"><span class="n">AWS Lambda</span><span class="small">código sin servidores</span></div><div class="link" aria-hidden="true">→</div>
+    <div class="node"><span class="n">Amazon DynamoDB</span><span class="small">NoSQL, milisegundos</span></div>
+  </div>
+  <div class="grid g3">
+    <div class="box solid"><span class="lbl">Seguridad</span><h3>Amazon Cognito</h3><p class="small">Roles: cajero y jefe de tienda</p></div>
+    <div class="box"><span class="lbl">Módulos</span><h3>Inventario · ventas · pedidos · reportes</h3></div>
+    <div class="box"><span class="lbl">Recursos</span><h3>USD 100 de crédito AWS · Scrum · CloudWatch</h3></div>
+  </div>
+
+  <h3 class="sub">Variables, dimensiones y fórmulas</h3>
+  <div class="grid g2">
+    <div class="box"><span class="lbl">VI · ISO/IEC 25010</span><div class="tbl"><table><tbody>
+      <tr><td>PFA</td><td>Pruebas aprobadas / ejecutadas × 100</td></tr>
+      <tr><td>D</td><td>Tiempo operativo / tiempo total × 100</td></tr>
+      <tr><td>TRA</td><td>Σ tiempo de respuesta / N.° solicitudes (ms)</td></tr></tbody></table></div></div>
+    <div class="box"><span class="lbl">VD · Teoría de inventarios</span><div class="tbl"><table><tbody>
+      <tr><td>TRM</td><td>Σ (hora fin − hora inicio) / N.° movimientos (min)</td></tr>
+      <tr><td>ERS</td><td>SKU coincidentes / SKU contados × 100</td></tr>
+      <tr><td>SDA</td><td>SKU-día con stock cero / SKU-día observados × 100</td></tr></tbody></table></div></div>
+  </div>
+
+  <h3 class="sub">Diseño y muestra</h3>
+  <div class="design">
+    <div class="stp"><div class="disc f">G</div>La tienda del chino</div>
+    <div class="stp"><div class="disc">O1</div>Pretest con Excel</div>
+    <div class="stp"><div class="disc f">X</div>Implementación de la app</div>
+    <div class="stp"><div class="disc">O2</div>Postest con la app</div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Indicador</th><th>Unidad</th><th>Muestra por periodo</th><th>Muestreo</th></tr></thead>
+    <tbody>
+      <tr><td>TRM</td><td>Movimiento</td><td>30 entradas y ajustes consecutivos</td><td>Por conveniencia</td></tr>
+      <tr><td>ERS</td><td>SKU</td><td>30 SKU de alta rotación (los mismos)</td><td>Intencional</td></tr>
+      <tr><td>SDA</td><td>SKU-día</td><td>900 = 30 SKU × 30 días</td><td>Intencional</td></tr>
+    </tbody></table></div>
+
+  <h3 class="sub">¿Qué prueba estadística va con cada indicador?</h3>
+  <div class="tree">
+    <div class="branch"><b>TRM · HE1</b><div class="q">Minutos, periodos independientes. ¿Shapiro-Wilk con p &gt; 0.05?</div><div class="split"><div class="yes"><i>Sí</i>t de Student o Welch + d de Cohen</div><div class="no"><i>No</i>U de Mann-Whitney + r</div></div></div>
+    <div class="branch"><b>ERS · HE2</b><div class="q">Coincide sí/no en los mismos 30 SKU (pareado).</div><div class="yes"><i>Prueba</i>McNemar (tabla 2 × 2) + IC 95 %</div></div>
+    <div class="branch"><b>SDA · HE3</b><div class="q">30 porcentajes diarios por periodo. ¿Normalidad?</div><div class="split"><div class="yes"><i>Sí</i>t de Student o Welch</div><div class="no"><i>No</i>U de Mann-Whitney</div></div></div>
+  </div>
+  <p class="note"><b>α = 0.05, contraste unilateral.</b> La hipótesis general se confirma solo si se cumplen las tres específicas.</p>
+
+  <h3 class="sub">Validez y confiabilidad</h3>
+  <div class="grid g4">
+    <div class="box"><span class="lbl">V de Aiken</span><span class="big">≥ 0.80</span><p class="small">3 expertos, escala 1–4</p></div>
+    <div class="box"><span class="lbl">CCI · TRM</span><span class="big">≥ 0.85</span><p class="small">doble registro del 20 %</p></div>
+    <div class="box"><span class="lbl">Kappa · ERS y SDA</span><span class="big">≥ 0.80</span><p class="small">clasificaciones sí/no</p></div>
+    <div class="box"><span class="lbl">Prueba piloto</span><span class="big">5</span><p class="small">registros por ficha</p></div>
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section class="sec" id="preguntas">
+  <div class="sec-head"><span class="k">Parte 4</span><h2>Banco de preguntas del jurado</h2>
+    <p>Responde en voz alta antes de abrir cada pregunta. Cuando ya la domines, márcala; tu avance se guarda en este navegador.</p></div>
+  <div class="progress"><div class="pbar" aria-hidden="true"><i id="pfill"></i></div><span class="ptext" id="ptext">0 de 0 dominadas</span></div>
+  <div class="tools" id="filters" role="group" aria-label="Filtrar por tema"></div>
+  <div class="tools"><button class="btn" type="button" data-toggle="qaList" data-open="1">Abrir visibles</button><button class="btn" type="button" data-toggle="qaList" data-open="0">Cerrar todas</button><button class="btn" type="button" id="shuffle">Orden aleatorio</button><button class="btn" type="button" id="reset">Reiniciar avance</button></div>
+  <div class="list" id="qaList"></div>
+</section>
+
+<!-- GLOSARIO -->
+<section class="sec" id="glosario">
+  <div class="sec-head"><span class="k">Parte 5</span><h2>Glosario de siglas</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Sigla</th><th>Significado</th></tr></thead>
+    <tbody>
+      <tr><td>SKU</td><td>Código que identifica cada producto distinto del catálogo</td></tr>
+      <tr><td>SKU-día</td><td>Un producto observado durante un día (30 SKU × 30 días = 900)</td></tr>
+      <tr><td>TRM</td><td>Tiempo de registro de un movimiento de inventario, en minutos</td></tr>
+      <tr><td>ERS</td><td>Exactitud de registros de stock, en porcentaje</td></tr>
+      <tr><td>SDA</td><td>SKU-día con stock agotado, en porcentaje</td></tr>
+      <tr><td>PFA</td><td>Porcentaje de pruebas funcionales aprobadas</td></tr>
+      <tr><td>D</td><td>Disponibilidad del servicio, en porcentaje</td></tr>
+      <tr><td>TRA</td><td>Tiempo de respuesta de la API, en milisegundos</td></tr>
+      <tr><td>API REST</td><td>Interfaz por la que la aplicación envía y recibe datos del servidor</td></tr>
+      <tr><td>Serverless</td><td>Modelo sin servidores propios: AWS ejecuta el código solo cuando se necesita</td></tr>
+      <tr><td>MIPYMES</td><td>Micro, pequeñas y medianas empresas</td></tr>
+      <tr><td>CCI · κ</td><td>Coeficiente de correlación intraclase y Kappa de Cohen: concordancia entre evaluadores</td></tr>
+      <tr><td>V de Aiken</td><td>Coeficiente que resume el acuerdo de los jueces expertos sobre cada ítem</td></tr>
+    </tbody></table></div>
+</section>
+
+<p class="foot">Guía elaborada a partir de Tesis_Grupo6 (Capítulos I y II) y de la presentación del grupo. Los datos del minimarket son estimados hasta el pretest.</p>
+</main>
+
+<script>
+const GUION = [{"t": "Portada", "idea": "Saluda, presenta a ambos y lee el título completo una sola vez.", "txt": "Buenas tardes, estimada Dra. Mara Sandra Rivera Galindo y compañeros. Somos Rafael Gutierrez Yupanqui y Amir Haram Urbano Hinostroza, estudiantes de Ingeniería de Sistemas Computacionales, y presentamos nuestro proyecto de tesis titulado «Implementación de una aplicación Android con API REST, AWS Lambda y Amazon DynamoDB para la gestión de inventarios en un minimarket del Cercado de Lima, 2026». Expondremos la introducción y la realidad problemática, la formulación del problema y los objetivos, la justificación, el marco teórico y las variables, las hipótesis y la metodología.", "w": 85}, {"t": "Introducción y realidad problemática", "idea": "Del mundo al Perú y a Lima: el registro manual causa demoras, errores y faltantes.", "txt": "La gestión de inventarios permite registrar y controlar las existencias para evitar faltantes y excesos. A nivel internacional, las MIPYMES sostienen la economía, pero muchas no controlan su gestión: en México, el 66.5 % no monitorea sus indicadores de desempeño (Galaviz et al., 2024). En Indonesia, el registro manual del inventario generó ineficiencias en el stock y quiebres frecuentes (Putra et al., 2025; Setiawati et al., 2025), y en Ecuador y Colombia se reportaron tiendas que no podían identificar su stock disponible ni la rotación de sus productos (Bermudes et al., 2022; Arroyo et al., 2023). En el Perú, el 99.1 % de las empresas formales son micro y pequeñas y el 44.2 % pertenece al comercio (Agencia Andina, 2025). En Lima Metropolitana se concentra el 42.2 % de las empresas del país, y los negocios de los mercados de abasto enfrentan brechas para adoptar tecnologías digitales (INEI, 2026; Pinto, 2025).", "w": 151}, {"t": "Realidad problemática: La tienda del chino", "idea": "Aterriza el problema en el minimarket; aclara que los valores son estimados.", "txt": "Nuestro caso de estudio es La tienda del chino, ubicada en la Unidad Vecinal N.° 3, puestos 116-117, en el Cercado de Lima. Maneja aproximadamente 800 productos, cuenta con 3 a 4 trabajadores, atiende entre 300 y 500 personas al día y lleva su inventario de forma aproximada en una hoja de Excel. Estimamos que registrar un movimiento de inventario toma unos 2.5 minutos, que el stock registrado difiere del conteo físico en cerca del 20 % de los productos y que alrededor del 8 % de los productos está agotado cada día; estos valores se confirmarán en el pretest. Por ello, proponemos una aplicación Android con API REST, AWS Lambda y Amazon DynamoDB que centralice el registro de productos, ventas y pedidos.", "w": 123}, {"t": "Problema y objetivo generales", "idea": "La pregunta y el objetivo dicen lo mismo: ¿la aplicación mejora la gestión de inventarios?", "txt": "A partir de esta situación, formulamos el problema general: ¿en qué medida la implementación de una aplicación Android con API REST, AWS Lambda y Amazon DynamoDB mejora la gestión de inventarios en un minimarket del Cercado de Lima, 2026? En coherencia con esta pregunta, nuestro objetivo general es determinar en qué medida la implementación de esta aplicación mejora la gestión de inventarios del minimarket.", "w": 64}, {"t": "Problemas y objetivos específicos", "idea": "Un problema y un objetivo por indicador: TRM, ERS y SDA.", "txt": "La gestión de inventarios se mide con tres indicadores, y para cada uno planteamos un problema y un objetivo específicos. El primero busca determinar en qué medida la aplicación reduce el tiempo de registro de un movimiento de inventario, o TRM; el segundo, en qué medida incrementa la exactitud de registros de stock, o ERS; y el tercero, en qué medida reduce el porcentaje de SKU-día con stock agotado, o SDA.", "w": 71}, {"t": "Justificación: importancia", "idea": "Social, teórica, metodológica y práctica, con un argumento cada una.", "txt": "El estudio es importante en cuatro aspectos. En lo social, la investigación responde a los errores, demoras y faltantes que afectan la atención y la rentabilidad del comercio, sector que concentra el 44.2 % de las empresas formales del país. En lo teórico, aporta evidencia sobre aplicaciones móviles en la nube en el comercio minorista de menor escala, porque la mayoría de los estudios se centró en grandes empresas o entornos web. En lo metodológico, ofrece un diseño preexperimental con fichas, fórmulas e instrumentos que otros estudios podrán reutilizar. En lo práctico, la aplicación permitirá registrar los movimientos, descontar el stock en cada venta y generar reportes, en beneficio del propietario, los trabajadores y los clientes.", "w": 116}, {"t": "Justificación: viabilidad", "idea": "Técnica, económica, operativa y temporal: el estudio se puede hacer.", "txt": "Además, el estudio es viable. En lo técnico, la aplicación se desarrollará en Kotlin con Android Studio y con servicios sin servidor de AWS, que no requieren administrar servidores propios. En lo económico, la operación en AWS se cubrirá con los 100 dólares de crédito gratuito de la cuenta. En lo operativo, contaremos con la autorización del propietario y el consentimiento de los trabajadores, e instalaremos la aplicación en los dispositivos del minimarket con la capacitación del personal. Y en lo temporal, el proyecto se organiza en dos etapas: su desarrollo en Tesis I, en 2026, y su culminación en Tesis II, en 2027.", "w": 104}, {"t": "Antecedentes internacionales", "idea": "Setiawati (Android y reposición) y Duque (−71.20 % de tiempo).", "txt": "Entre los antecedentes internacionales, Setiawati et al. (2025) desarrollaron en Indonesia una aplicación Android con Flutter y SQLite que calcula el punto de reorden; el sistema apoyó las decisiones de reposición y ayudó a evitar faltantes, lo que respalda el uso de Android en negocios pequeños. Por su parte, Duque et al. (2024) desarrollaron en Ecuador una aplicación móvil evaluada con la norma ISO 25010, que obtuvo una usabilidad de 4.85 sobre 5 y redujo en 71.20 % el tiempo de cálculo de costos y cuadre de ventas, lo que demuestra que una aplicación móvil puede reducir el tiempo de un proceso manual.", "w": 103}, {"t": "Antecedentes nacionales", "idea": "Pantoja y Castillo (pre/post en tiempos) y Zéniz (diseño preexperimental).", "txt": "En el ámbito nacional, Pantoja y Castillo (2025) implementaron un sistema web de inventarios en un gimnasio de Trujillo con un diseño cuasiexperimental de pretest y postest, y redujeron los tiempos de gestión del stock y de obtención de las entradas y salidas, con un 95 % de confianza. Asimismo, Zéniz et al. (2024) aplicaron un diseño preexperimental en una tienda de confecciones, con cronómetro, ficha de registro y la prueba t de Student, y obtuvieron mejoras en el tiempo de atención, la búsqueda de información y los reportes. Ambos estudios respaldan nuestro diseño y nuestros instrumentos.", "w": 97}, {"t": "Marco teórico: aplicación Android en la nube", "idea": "Recorre la arquitectura de izquierda a derecha y cierra con la ISO/IEC 25010.", "txt": "Nuestra variable independiente es la aplicación Android, un programa para teléfonos y tabletas que permite registrar y consultar la información del negocio desde cualquier lugar. La aplicación, desarrollada en Kotlin, envía sus solicitudes mediante una API REST en Amazon API Gateway a funciones AWS Lambda, que ejecutan el código sin administrar servidores, y los datos se guardan en Amazon DynamoDB; el acceso de los usuarios, cajero y jefe de tienda, se controla con Amazon Cognito. Tendrá cuatro módulos: inventario, ventas, pedidos, y reportes y estadísticas. Su calidad se evaluará con tres dimensiones de la norma ISO/IEC 25010: adecuación funcional, fiabilidad y eficiencia de desempeño.", "w": 104}, {"t": "Marco teórico: gestión de inventarios", "idea": "Teoría de inventarios, de la que salen las tres dimensiones.", "txt": "La variable dependiente es la gestión de inventarios, que se sustenta en la teoría de inventarios: gestionar las existencias optimiza el flujo de productos y reduce costos mediante modelos como la cantidad óptima de pedido, la clasificación ABC y el punto de reorden (Zapata, 2025; Alnahhal et al., 2024). De esta teoría derivamos tres dimensiones: el registro de movimientos de inventario, medido con el TRM en minutos; la exactitud de los registros de stock, medida con la ERS en porcentaje; y la disponibilidad de productos, medida con el SDA en porcentaje.", "w": 91}, {"t": "Operacionalización: variable independiente", "idea": "PFA, D y TRA verifican la aplicación; no se comparan pre/post.", "txt": "En la matriz de operacionalización de la variable independiente, la aplicación Android se mide con tres dimensiones de la norma ISO/IEC 25010: la adecuación funcional, con el porcentaje de pruebas funcionales aprobadas; la fiabilidad, con el porcentaje de disponibilidad del servicio; y la eficiencia de desempeño, con el tiempo de respuesta de la API en milisegundos. Como la aplicación no existe antes de la intervención, estos indicadores se miden solo después de implementarla y sirven para verificar su funcionamiento.", "w": 79}, {"t": "Operacionalización: variable dependiente", "idea": "TRM, ERS y SDA, con sus fórmulas y su ficha.", "txt": "En la matriz de la variable dependiente, la gestión de inventarios se mide con tres indicadores en escala de razón: el TRM, que es el promedio de la diferencia entre la hora de fin y la hora de inicio de cada movimiento; la ERS, que es el porcentaje de SKU cuyo stock registrado coincide con el conteo físico; y el SDA, que es el porcentaje de SKU-día con stock cero. Cada indicador se registra en su propia ficha de observación, tanto en el pretest como en el postest.", "w": 88}, {"t": "Hipótesis", "idea": "Una general y tres específicas, respaldadas por los antecedentes.", "txt": "Con base en la literatura revisada, planteamos como hipótesis general que la implementación de una aplicación Android con API REST, AWS Lambda y Amazon DynamoDB mejora significativamente la gestión de inventarios en un minimarket del Cercado de Lima, 2026. De ella se desprenden tres hipótesis específicas: la aplicación reduce significativamente el TRM, incrementa significativamente la ERS y reduce significativamente el SDA. Estas hipótesis se apoyan en estudios como los de Pantoja y Castillo (2025) y Zéniz et al. (2024), que redujeron los tiempos de gestión, y en el de Setiawati et al. (2025), cuya aplicación Android ayudó a evitar faltantes.", "w": 100}, {"t": "Metodología: enfoque, tipo, nivel y diseño", "idea": "Recorre O1 → X → O2 y menciona la limitación antes de que te la pregunten.", "txt": "La investigación tiene un enfoque cuantitativo, es de tipo aplicada, de nivel explicativo y de alcance longitudinal prospectivo. El diseño es preexperimental de un solo grupo con pretest y postest: primero medimos la gestión de inventarios con el registro manual en hoja de cálculo (O1), luego implementamos la aplicación (X) y finalmente volvemos a medir con la aplicación en uso (O2). Como no hay grupo de control, reconocemos que factores como la temporada o los proveedores pueden influir; por eso, ambos periodos mantendrán los mismos días de la semana, horarios y niveles de demanda.", "w": 94}, {"t": "Metodología: población y muestra", "idea": "Una muestra por indicador: 30 movimientos, 30 SKU y 900 SKU-día.", "txt": "La población está formada por los movimientos de inventario, los aproximadamente 800 SKU activos y los SKU-día del minimarket durante los periodos de observación de 2026. La muestra se define por indicador: para el TRM, 30 entradas de mercadería y ajustes de stock consecutivos, con un muestreo no probabilístico por conveniencia; para la ERS, 30 SKU de alta rotación, seleccionados de forma intencional y contados en ambos periodos; y para el SDA, 900 SKU-día, que resultan de revisar esos 30 SKU durante 30 días a una hora fija. Incluimos los movimientos con hora de inicio y de fin verificables, y excluimos las ventas, porque con la aplicación descuentan el stock de forma automática.", "w": 113}, {"t": "Gracias", "idea": "Cierra con calma e invita a las preguntas.", "txt": "Con esto concluimos la presentación de nuestro proyecto de tesis. Agradecemos su atención y quedamos atentos a sus preguntas y observaciones.", "w": 21}];
+
+const QA = [
+ // Problema
+ {c:"Problema", q:"¿Por qué eligieron La tienda del chino?", a:"Porque reúne el problema que describimos: maneja unos 800 productos con 3 a 4 trabajadores, atiende entre 300 y 500 personas al día y lleva su inventario de forma aproximada en una hoja de Excel. Además contamos con la autorización del propietario para observar el proceso."},
+ {c:"Problema", q:"¿Los valores de 2.5 minutos, 20 % y 8 % son reales?", a:"Son valores estimados que se confirmarán en el pretest. La tesis lo indica de forma explícita y por eso no los presentamos como resultados."},
+ {c:"Problema", q:"¿Qué relación tiene el contexto internacional con su minimarket?", a:"Los estudios muestran que el registro manual produce tres problemas: demoras en el registro, errores en el stock y productos agotados (Dimentieva et al., 2026; Setiawati et al., 2025). Son los mismos síntomas que medimos en el minimarket con el TRM, la ERS y el SDA."},
+ {c:"Problema", q:"¿Por qué el estudio se ubica en Lima Metropolitana?", a:"Lima concentra el 42.2 % de las empresas del país y el comercio es su actividad principal (INEI, 2026). Además, los negocios de los mercados de abasto de Lima tienen brechas para adoptar tecnologías digitales (Pinto, 2025)."},
+ {c:"Problema", q:"¿Cuál es el problema general en una frase?", a:"Saber en qué medida una aplicación Android con API REST, AWS Lambda y Amazon DynamoDB mejora la gestión de inventarios del minimarket, medida con el tiempo de registro, la exactitud del stock y los productos agotados."},
+ // Variables y teoría
+ {c:"Variables", q:"¿Cuál es la variable independiente y cuál la dependiente?", a:"La independiente es la aplicación Android con API REST, AWS Lambda y Amazon DynamoDB; la dependiente es la gestión de inventarios."},
+ {c:"Variables", q:"¿Qué teoría sustenta la gestión de inventarios?", a:"La teoría de inventarios: gestionar las existencias optimiza el flujo de productos y reduce costos con modelos como la cantidad óptima de pedido, la clasificación ABC y el punto de reorden (Zapata, 2025; Alnahhal et al., 2024)."},
+ {c:"Variables", q:"¿De dónde salen las tres dimensiones de la variable dependiente?", a:"De la teoría de inventarios: para decidir cuándo y cuánto reponer se necesita registrar los movimientos, que esos registros sean exactos y que los productos estén disponibles. Por eso las dimensiones son registro de movimientos, exactitud de los registros y disponibilidad de productos."},
+ {c:"Variables", q:"¿Por qué usan la ISO/IEC 25010 para la variable independiente?", a:"Porque es el modelo de calidad del producto de software que define características como la adecuación funcional, la fiabilidad y la eficiencia de desempeño (ISO, 2023). Duque et al. (2024) también la usaron para evaluar una aplicación móvil."},
+ {c:"Variables", q:"¿Por qué los indicadores de la aplicación no se comparan en el pretest y el postest?", a:"Porque la aplicación no existe antes de la intervención. La funcionalidad, la disponibilidad y el tiempo de respuesta se miden solo después y sirven para verificar que funcione."},
+ {c:"Variables", q:"¿Qué es un SKU-día y por qué lo usan?", a:"Es un producto observado durante un día. Expresa la exposición a faltantes con una unidad de tiempo uniforme: 30 SKU revisados durante 30 días dan 900 SKU-día por periodo."},
+ {c:"Variables", q:"¿Cómo se calcula la exactitud de registros de stock?", a:"Es el porcentaje de SKU cuyo stock registrado coincide exactamente, sin diferencia de unidades, con un conteo físico independiente: ERS = SKU coincidentes / SKU contados × 100."},
+ {c:"Variables", q:"Los quiebres de stock también dependen de los proveedores. ¿Cómo atribuyen el efecto a la aplicación?", a:"El efecto se atribuye al módulo de pedidos y a las alertas de stock mínimo, que adelantan la reposición. Además se comparan periodos de demanda similar con el mismo procedimiento de observación."},
+ // Antecedentes
+ {c:"Antecedentes", q:"¿En qué se diferencia su estudio del de Pantoja y Castillo (2025)?", a:"Ellos implementaron un sistema web en un gimnasio con un diseño cuasiexperimental. Nosotros usamos una aplicación Android con servicios en la nube, en un minimarket, con un diseño preexperimental. Coincidimos en medir tiempos de gestión del inventario antes y después."},
+ {c:"Antecedentes", q:"¿Qué aporta el estudio de Setiawati et al. (2025)?", a:"Muestra que una aplicación Android con punto de reorden apoya las decisiones de reposición y ayuda a evitar faltantes en un negocio pequeño. Respalda la elección de Android y el indicador SDA."},
+ {c:"Antecedentes", q:"¿Qué aporta el estudio de Duque et al. (2024)?", a:"Una aplicación móvil redujo en 71.20 % el tiempo de un proceso que antes era manual y obtuvo una usabilidad de 4.85 sobre 5 con la ISO 25010. Respalda la hipótesis de reducción del TRM."},
+ {c:"Antecedentes", q:"¿Por qué Zéniz et al. (2024) es importante para su metodología?", a:"Porque usó un diseño preexperimental con cronómetro, ficha de registro y prueba t de Student para medir tiempos en un comercio peruano, igual que nuestro enfoque."},
+ // Tecnología
+ {c:"Tecnología", q:"¿Por qué una aplicación Android y no un sistema web?", a:"Porque la mayoría de los negocios pequeños ya cuenta con dispositivos Android (Setiawati et al., 2025) y la aplicación permite registrar desde el mostrador o el almacén. Además, la mayoría de los estudios previos se centró en entornos web."},
+ {c:"Tecnología", q:"¿Por qué AWS Lambda y Amazon DynamoDB?", a:"Lambda ejecuta el código sin administrar servidores y DynamoDB responde en pocos milisegundos (AWS, s. f.). Los servicios en la nube ofrecen costos accesibles y disponibilidad permanente a las microempresas (Andrea et al., 2024), y la operación se cubre con el crédito de 100 dólares."},
+ {c:"Tecnología", q:"¿Para qué sirve Amazon API Gateway?", a:"Las funciones Lambda no exponen por sí solas una API REST, así que las solicitudes de la aplicación les llegan a través de API Gateway (AWS, s. f.)."},
+ {c:"Tecnología", q:"¿Qué pasa si se cae el internet en el minimarket?", a:"La aplicación tiene una caché local con sincronización, para que el registro continúe cuando la conexión es intermitente."},
+ {c:"Tecnología", q:"¿Cómo se controla quién usa la aplicación?", a:"Con Amazon Cognito, que da acceso por roles: cajero y jefe de tienda."},
+ {c:"Tecnología", q:"¿Qué módulos tendrá la aplicación?", a:"Cuatro: inventario de productos con escaneo de códigos de barras, ventas con descuento automático del stock, pedidos con alertas de stock mínimo, y reportes y estadísticas."},
+ {c:"Tecnología", q:"¿Qué metodología de desarrollo usarán?", a:"Scrum, como en estudios similares (Cruz et al., 2024; Pantoja & Castillo, 2025): planificación con historias de usuario, configuración del entorno, desarrollo por sprints y pruebas, con revisión del propietario en cada sprint."},
+ {c:"Tecnología", q:"¿Cómo medirán la disponibilidad y el tiempo de respuesta?", a:"Con los registros de monitoreo de Amazon CloudWatch, mediante análisis documental después de la implementación."},
+ // Metodología
+ {c:"Metodología", q:"¿Por qué el diseño es preexperimental y no experimental?", a:"Porque hay un solo minimarket y no existe un grupo de control equivalente. Se mide antes (O1), se implementa la aplicación (X) y se mide después (O2) (Hernández & Mendoza, 2023)."},
+ {c:"Metodología", q:"Si es preexperimental, ¿por qué dicen que el nivel es explicativo?", a:"Porque buscamos explicar el efecto de la aplicación sobre la gestión de inventarios. Reconocemos que, sin grupo de control, los resultados fundamentan una asociación empírica de mejora y no una causalidad experimental absoluta."},
+ {c:"Metodología", q:"¿Por qué el alcance es longitudinal?", a:"Porque se comparan mediciones tomadas en dos periodos de 2026: el pretest y el postest."},
+ {c:"Metodología", q:"¿Por qué excluyen las ventas del TRM?", a:"Con la aplicación las ventas descuentan el stock de forma automática. Si se incluyeran, el pretest y el postest no serían comparables; por eso solo se cronometran las entradas de mercadería y los ajustes de stock."},
+ {c:"Metodología", q:"¿Cómo eligen los 30 movimientos de inventario?", a:"Son las entradas de mercadería y los ajustes de stock registrados de forma consecutiva desde el inicio de cada periodo, con la misma proporción de cada tipo en ambas mediciones. Es un muestreo no probabilístico por conveniencia."},
+ {c:"Metodología", q:"¿Por qué 30 SKU de alta rotación?", a:"Son los productos con más movimientos y, por tanto, con mayor riesgo de diferencias entre el registro y el stock físico. Se eligen de forma intencional a partir de las ventas de la hoja de cálculo."},
+ {c:"Metodología", q:"¿Pueden generalizar los resultados a todo el minimarket?", a:"No. Al ser un muestreo no probabilístico, los resultados de exactitud y de agotados se limitan a los 30 SKU de alta rotación y no se generalizan a los productos de baja rotación."},
+ {c:"Metodología", q:"¿Cuáles son los criterios de inclusión y exclusión?", a:"Se incluyen las entradas y ajustes con hora de inicio y fin verificables y los productos en venta durante el estudio. Se excluyen las ventas, los productos descontinuados o de venta ocasional y los registros de prueba, duplicados o incompletos."},
+ {c:"Metodología", q:"¿Cómo controlan los factores externos?", a:"Ambos periodos se emparejan en días de la semana, horarios de atención y demanda. Aun así, reconocemos como limitación que la temporada, los proveedores o los cambios de personal pueden influir."},
+ // Instrumentos
+ {c:"Instrumentos", q:"¿Por qué crearon sus propias fichas?", a:"Porque no se encontró un instrumento validado que registre estos indicadores en un minimarket. Las fichas siguen cuatro pasos: definir cada indicador, redactar los campos, el juicio de tres expertos y una prueba piloto."},
+ {c:"Instrumentos", q:"¿Cómo validan las fichas?", a:"Con el juicio de tres expertos en Ingeniería de Sistemas y metodología, que califican pertinencia, relevancia y claridad de 1 a 4. El acuerdo se mide con la V de Aiken y se aceptan valores de 0.80 o más (Merino, 2023)."},
+ {c:"Instrumentos", q:"¿Por qué no usan el alfa de Cronbach?", a:"Porque las fichas recogen datos objetivos (horas, cantidades y conteos). El alfa de Cronbach se usa en escalas de actitud (Medina et al., 2023)."},
+ {c:"Instrumentos", q:"¿Cómo aseguran la confiabilidad?", a:"Con un procedimiento de observación estandarizado y con la doble codificación del 20 % de las observaciones por un segundo evaluador. La concordancia se mide con el CCI (≥ 0.85) para los tiempos y con Kappa de Cohen (≥ 0.80) para las clasificaciones sí/no."},
+ {c:"Instrumentos", q:"¿Qué registra cada ficha?", a:"La ficha 1, el número, la fecha, el tipo y las horas de inicio y fin de cada movimiento. La ficha 2, el código, el stock registrado, el stock físico y si coinciden. La ficha 3, la fecha, los SKU observados y los SKU con stock cero de cada día."},
+ // Estadística
+ {c:"Estadística", q:"¿Qué prueba usarán para el TRM?", a:"Primero Shapiro-Wilk y Levene. Si hay normalidad, t de Student para muestras independientes (o Welch con varianzas desiguales) con d de Cohen; si no, U de Mann-Whitney con medianas y r = |Z| / √N."},
+ {c:"Estadística", q:"¿Por qué McNemar para la ERS?", a:"Porque la ERS es dicotómica (coincide o no) y se mide en los mismos 30 SKU antes y después: son datos pareados en una tabla 2 × 2."},
+ {c:"Estadística", q:"¿Por qué muestras independientes en el TRM y el SDA?", a:"Porque los movimientos y los días del pretest son hechos distintos a los del postest; no son las mismas observaciones repetidas."},
+ {c:"Estadística", q:"¿Por qué el contraste es unilateral?", a:"Porque las hipótesis tienen dirección: esperamos que el TRM y el SDA se reduzcan y que la ERS se incremente."},
+ {c:"Estadística", q:"¿Cómo se confirma la hipótesis general?", a:"Solo si se cumplen a la vez la reducción significativa del TRM, el incremento significativo de la ERS y la reducción significativa del SDA, con p < 0.05. No se promedian porque tienen unidades distintas."},
+ {c:"Estadística", q:"¿Qué software usarán?", a:"Los datos se consolidan en Microsoft Excel y se procesan en IBM SPSS Statistics."},
+ // Ética y cierre
+ {c:"Ética", q:"¿Cómo protegen los datos?", a:"Con la autorización del propietario y el consentimiento informado de los trabajadores, sin datos personales de clientes, con acceso por roles en Cognito, HTTPS y cifrado en DynamoDB, conforme a la Ley N.° 29733 y su reglamento (Decreto Supremo N.° 016-2024-JUS, 2024)."},
+ {c:"Ética", q:"¿Qué pasa con los datos al terminar el estudio?", a:"Las fichas y bases de datos se conservan sin identificar a los trabajadores durante dos años y luego se eliminan de forma segura. Los datos de prueba se eliminan de DynamoDB y el nombre del minimarket solo se publica con autorización escrita del propietario."},
+ {c:"Ética", q:"¿Cuándo se recolectarán los datos?", a:"En Tesis II, en 2027: validación de las fichas y pretest al inicio del ciclo, desarrollo por sprints, despliegue y capacitación, postest y luego el análisis estadístico."},
+ {c:"Ética", q:"¿Cuál es la principal limitación del estudio?", a:"La ausencia de grupo de control, que impide descartar por completo factores externos, y el muestreo no probabilístico, que limita la generalización a los productos de alta rotación."},
+];
+
+const sTitle = (g,i)=>`${String(i+1).padStart(2,"0")} · ${g.t}`;
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+// Guion
+const gl = document.getElementById("guionList");
+let words = 0;
+gl.innerHTML = GUION.map((g,i)=>{ words += g.w; const s = Math.round(g.w/130*60);
+  return `<details><summary><span class="mk" aria-hidden="true">+</span><span class="qtext">${esc(sTitle(g,i))}<br><span class="idea">${esc(g.idea)}</span></span><span class="meta"><span class="tag">≈ ${s} s</span></span></summary><div class="ans"><p>${esc(g.txt)}</p></div></details>`;}).join("");
+document.getElementById("minTotal").textContent = Math.round(words/130);
+
+// Barra de tiempo por bloques
+const blocks = [["Problema",[0,1,2]],["Problema y objetivos",[3,4]],["Justificación",[5,6]],["Antecedentes",[7,8]],["Marco y variables",[9,10,11,12]],["Hipótesis",[13]],["Metodología",[14,15]],["Cierre",[16]]];
+const tb = document.getElementById("timebar"), lg = document.getElementById("legend");
+blocks.forEach(([n,ix])=>{ const w = ix.reduce((a,i)=>a+GUION[i].w,0); const sec = Math.round(w/130*60);
+  const sp = document.createElement("span"); sp.style.flex = String(w); sp.textContent = sec>=60 ? (sec/60).toFixed(1).replace(".0","")+" min" : sec+" s"; sp.title = n; tb.appendChild(sp);
+  const li = document.createElement("span"); li.innerHTML = `<b>${esc(n)}</b> ${sec>=60?(sec/60).toFixed(1)+" min":sec+" s"}`; lg.appendChild(li); });
+
+// Preguntas
+const KEY="tesis-g6-dominadas";
+let done = new Set();
+try { done = new Set(JSON.parse(localStorage.getItem(KEY)||"[]")); } catch(e) {}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify([...done])); }catch(e){} }
+const cats = ["Todas", ...new Set(QA.map(x=>x.c))];
+let active = "Todas", order = QA.map((_,i)=>i);
+const ql = document.getElementById("qaList"), fl = document.getElementById("filters");
+document.getElementById("qTotal").textContent = QA.length;
+fl.innerHTML = cats.map(c=>`<button type="button" class="filter" aria-pressed="${c===active}" data-c="${esc(c)}">${esc(c)} <span class="small">${c==="Todas"?QA.length:QA.filter(x=>x.c===c).length}</span></button>`).join("");
+fl.addEventListener("click",e=>{ const b=e.target.closest(".filter"); if(!b) return; active=b.dataset.c; fl.querySelectorAll(".filter").forEach(x=>x.setAttribute("aria-pressed", x===b)); render(); });
+function render(){
+  ql.innerHTML = order.filter(i=>active==="Todas"||QA[i].c===active).map(i=>{ const x=QA[i]; const d=done.has(i);
+    return `<details class="${d?"done":""}" data-i="${i}"><summary><span class="mk" aria-hidden="true">${d?"✓":"?"}</span><span class="qtext">${esc(x.q)}</span><span class="meta"><span class="tag">${esc(x.c)}</span></span></summary><div class="ans"><p>${esc(x.a)}</p><label class="mastered"><input type="checkbox" id="m${i}" ${d?"checked":""}> Ya la domino</label></div></details>`; }).join("");
+  progress();
+}
+ql.addEventListener("change",e=>{ const cb=e.target; if(cb.type!=="checkbox") return; const det=cb.closest("details"); const i=+det.dataset.i;
+  if(cb.checked) done.add(i); else done.delete(i); save(); det.classList.toggle("done",cb.checked); det.querySelector(".mk").textContent = cb.checked?"✓":"?"; progress(); });
+function progress(){ const n=done.size, t=QA.length; document.getElementById("pfill").style.width=(n/t*100)+"%"; document.getElementById("ptext").textContent=`${n} de ${t} dominadas`; }
+document.getElementById("shuffle").addEventListener("click",()=>{ for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];} render(); });
+document.getElementById("reset").addEventListener("click",()=>{ done.clear(); save(); render(); });
+document.querySelectorAll("[data-toggle]").forEach(b=>b.addEventListener("click",()=>{ document.getElementById(b.dataset.toggle).querySelectorAll("details").forEach(d=>d.open = b.dataset.open==="1"); }));
+render();
+</script>
+
+</body></html>
